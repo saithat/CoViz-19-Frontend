@@ -10,11 +10,11 @@ function App() {
         <p>Let's Go Gang!!!</p>
         <a
           className="App-link"
-          href="demo-covid-api.herokuapp.com/"
+          href="https://demo-covid-api.herokuapp.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          API link...
+          API link.....
         </a>
       </header>
     </div>

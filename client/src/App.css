@@ -5,7 +5,7 @@ body {
   background-color: #181621;
 }
 .app {
-  margin: 30px 0;
+  margin: 30px 15px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -27,7 +27,6 @@ body {
 }
 .MuiMenuItem-root {
   margin-top: 0;
-  background-color: #333042 !important;
   color: #fff !important;
   border-bottom: 1px solid rgb(94, 94, 94) !important;
 }
@@ -38,16 +37,14 @@ body {
   flex: 0.8; /* this is going to take up 90% of the screen */
 }
 .left__table {
-  background-color: #333042;
+  width: 300px;
 }
-.app__right .MuiCardContent-root {
+.MuiCardContent-root {
   background-color: #333042;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
 }
 .app__graph {
-  height: 225px;
+  height: 200px;
+  margin: 0;
 }
 .app__stats {
   display: flex;
@@ -60,7 +57,7 @@ body {
 .app__rightGraphTitle {
   text-transform: capitalize;
   color: #dadada;
-  margin: 20px 0 20px;
+  margin: 20px 0;
 }
 .leaflet-popup-content-wrapper {
   background-color: #333042 !important;
@@ -71,4 +68,10 @@ body {
 .info-container {
   color: #dadada !important;
   width: 220px !important;
+}
+
+@media (max-width: 1455px) {
+  .app {
+    flex-direction: column;
+  }
 }

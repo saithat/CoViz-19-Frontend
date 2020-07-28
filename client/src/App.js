@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import {
   MenuItem,
@@ -90,7 +90,7 @@ function App() {
       <Card>
         <CardContent className="left__table">
           <h3 className="app__rightTableTitle">
-            current confirmed cases by country
+            current confirmed cases • world
           </h3>
           <Table countries={worldTableData} />
           <h3 className="app__rightGraphTitle">
@@ -106,7 +106,7 @@ function App() {
       <div className="app__left">
         <div className="app__header">
           <h1>COVID-19 Client Demo</h1>
-          <FormControl ref={createRef()} className="app__dropdown">
+          <FormControl className="app__dropdown">
             <Select
               variant="outlined"
               onChange={onCountryChange}
@@ -162,9 +162,7 @@ function App() {
 
       <Card className="app__right">
         <CardContent>
-          <h3 className="app__rightTableTitle">
-            current confirmed cases by US states
-          </h3>
+          <h3 className="app__rightTableTitle">current confirmed cases • US</h3>
           <Table states={statesTableData} />
           <h3 className="app__rightGraphTitle">
             new daily {casesType} US nationwide

@@ -165,7 +165,7 @@ function App() {
           <h3 className="app__rightTableTitle">current confirmed cases • US</h3>
           <Table states={statesTableData} />
           <h3 className="app__rightGraphTitle">
-            new daily {casesType} US nationwide
+            new daily {casesType} nationwide
           </h3>
           <LineGraph
             className="app__graph"

@@ -20,6 +20,20 @@ body {
   margin-bottom: 20px;
   justify-content: space-between;
 }
+.right__nav {
+  display: flex;
+  align-items: center;
+}
+.user-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: large;
+  margin-right: 25px;
+  border: 1px solid #333042;
+  border-radius: 10px;
+  background-color: #333042;
+  padding: 16px 25px;
+}
 .app__dropdown .MuiSelect-outlined {
   background-color: #333042;
   border-radius: 10px;
@@ -30,14 +44,12 @@ body {
   color: #fff !important;
   border-bottom: 1px solid rgb(94, 94, 94) !important;
 }
-.MuiList-root {
+.MuiList-root,
+.MuiPaper-root {
   background-color: #333042 !important;
 }
 .app__left {
   flex: 0.8; /* this is going to take up 90% of the screen */
-}
-.left__table {
-  width: 300px;
 }
 .MuiCardContent-root {
   background-color: #333042;
@@ -73,5 +85,10 @@ body {
 @media (max-width: 1455px) {
   .app {
     flex-direction: column;
+  }
+
+  .MuiPaper-root {
+    width: 80%;
+    margin: 0 auto;
   }
 }

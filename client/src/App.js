@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import {
@@ -14,79 +15,17 @@ import { sortData, prettyPrintStat } from './util';
 import LineGraph from './LineGraph';
 import 'leaflet/dist/leaflet.css';
 import SideBar from './components/sideBar'
+=======
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+>>>>>>> 896e2b0e79a8b3fde5cf34a12d7cc6e420ca22a8
+
+import Home from './Home';
+import User from './User';
 
 function App() {
-  const [countryInfo, setCountryInfo] = useState({});
-  const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState('worldwide');
-  const [states, setStates] = useState([]);
-  const [worldTableData, setWorldTableData] = useState([]);
-  const [statesTableData, setStatesTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
-  const [mapZoom, setMapZoom] = useState(2);
-  const [mapCountries, setMapCountries] = useState([]);
-  const [casesType, setCasesType] = useState('cases');
-
-  useEffect(() => {
-    fetch('https://demo-covid-api.herokuapp.com/all')
-      .then((response) => response.json())
-      .then((data) => setCountryInfo(data));
-  }, []);
-
-  useEffect(() => {
-    const getCountriesData = async () => {
-      await fetch('https://demo-covid-api.herokuapp.com/countries')
-        .then((response) => response.json())
-        .then((data) => {
-          const countries = data.map((country) => ({
-            name: country.country,
-            value: country.iso2,
-          }));
-          const sortedData = sortData(data);
-          setWorldTableData(sortedData);
-          setMapCountries(data);
-          setCountries(countries);
-        });
-    };
-    getCountriesData();
-  }, []);
-
-  useEffect(() => {
-    const getStatesData = async () => {
-      await fetch('https://demo-covid-api.herokuapp.com/states')
-        .then((response) => response.json())
-        .then((data) => {
-          const sortedData = sortData(data);
-          setStatesTableData(sortedData);
-          setStates(states);
-        });
-    };
-    getStatesData();
-  });
-
-  const onCountryChange = async (event) => {
-    const countryCode = event.target.value;
-
-    const url =
-      countryCode === 'worldwide'
-        ? 'https://demo-covid-api.herokuapp.com/all'
-        : `https://demo-covid-api.herokuapp.com/countries/code/${countryCode}`;
-
-    await fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setCountry(countryCode);
-        setCountryInfo(data);
-        if (countryCode === 'worldwide') {
-          setMapCenter([34.80746, -40.4796]);
-          setMapZoom(2);
-        } else {
-          setMapCenter([data.lat, data.long]);
-        }
-      })
-      .then(setMapZoom(3));
-  };
   return (
+<<<<<<< HEAD
     <div className="app">
       <SideBar>
       <Card>
@@ -178,6 +117,14 @@ function App() {
       </Card>
       </SideBar>
     </div>
+=======
+    <Router>
+      <div>
+        <Route path="/" exact component={Home} />
+        <Route path="/user" component={User} />
+      </div>
+    </Router>
+>>>>>>> 896e2b0e79a8b3fde5cf34a12d7cc6e420ca22a8
   );
 }
 

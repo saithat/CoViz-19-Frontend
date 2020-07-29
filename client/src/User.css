@@ -1,0 +1,53 @@
+.user {
+  margin: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user__left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.7;
+}
+
+.user__nave > h1 {
+  font-size: 2rem;
+}
+
+.user__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form {
+  margin: 20px auto;
+  background-color: #333042;
+  padding: 50px !important;
+  border-radius: 10px;
+}
+.form input {
+  width: 250px;
+  background-color: #181621;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  color: #fff;
+}
+.form-input {
+  margin: 10px 0;
+}
+.btn {
+  border: none;
+  border-radius: 10px;
+  background-color: #333042;
+  padding: 16px 25px;
+  background-color: #181621;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.top__twitter {
+  margin-bottom: 25px;
+}

@@ -13,6 +13,7 @@ import Table from './Table';
 import { sortData, prettyPrintStat } from './util';
 import LineGraph from './LineGraph';
 import 'leaflet/dist/leaflet.css';
+import SideBar from './components/sideBar'
 
 function App() {
   const [countryInfo, setCountryInfo] = useState({});
@@ -87,6 +88,7 @@ function App() {
   };
   return (
     <div className="app">
+      <SideBar>
       <Card>
         <CardContent className="left__table">
           <h3 className="app__rightTableTitle">
@@ -174,6 +176,7 @@ function App() {
           />
         </CardContent>
       </Card>
+      </SideBar>
     </div>
   );
 }

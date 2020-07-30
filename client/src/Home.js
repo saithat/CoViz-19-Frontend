@@ -93,7 +93,6 @@ function Home() {
   return (
     <div>
     <div className="home">
-    <SideBar />
       <Card className="table__left">
         <CardContent>
           <h3 className="app__rightTableTitle">
@@ -114,6 +113,7 @@ function Home() {
         <div className="app__header">
           <h1>COVID-19 Client</h1>
           <div className="right__nav">
+          <SideBar />
             <Link className="user-link" to="/user">
               User Dashboard
             </Link>

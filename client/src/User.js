@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './User.css';
 import { Link } from 'react-router-dom';
 
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 function User() {
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+  const [country, setCountry] = useState('');
+  const [cases, setCases] = useState();
+  const [recovered, setRecovered] = useState();
+  const [deaths, setDeaths] = useState();
+
+  const submit = (event) => {
+    event.preventDefault();
+
+    const payload = {
+      name: name,
+      date: date,
+      country: country,
+      cases: cases,
+      recovered: recovered,
+      deaths: deaths,
+    };
+
+    fetch({
+      url: '/api/save',
+      method: 'POST',
+      data: payload,
+    })
+      .then(() => {
+        console.log('Data has been sent to the server');
+        this.resetUserInputs();
+        this.getBlogPost();
+      })
+      .catch(() => {
+        console.log('Internal server error');
+      });
+  };
+
   return (
     <div className="user">
       <div className="user__left">
@@ -20,38 +54,49 @@ function User() {
               <input
                 type="text"
                 name="name"
-                placeholder="Country Name"
-                //   value={this.state.title}
-                //   onChange={this.handleChange}
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
-            </div>
-            <div className="form-input">
+
+              <input
+                type="text"
+                name="date"
+                placeholder="Date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+
+              <input
+                type="text"
+                name="country"
+                placeholder="Country Name"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+
               <input
                 type="text"
                 name="cases"
-                placeholder="Confirmed Cases"
-                //   value={this.state.title}
-                //   onChange={this.handleChange}
+                placeholder="New Cases"
+                value={cases}
+                onChange={(e) => setCases(e.target.value)}
               />
-            </div>
 
-            <div className="form-input">
               <input
                 type="text"
                 name="recovered"
-                placeholder="Recovered"
-                //   value={this.state.title}
-                //   onChange={this.handleChange}
+                placeholder="Newly Recovered"
+                value={recovered}
+                onChange={(e) => setRecovered(e.target.value)}
               />
-            </div>
 
-            <div className="form-input">
               <input
                 type="text"
                 name="deaths"
-                placeholder="Confirmed Deaths"
-                //   value={this.state.title}
-                //   onChange={this.handleChange}
+                placeholder="New Deaths"
+                value={deaths}
+                onChange={(e) => setDeaths(e.target.value)}
               />
             </div>
 
@@ -64,13 +109,13 @@ function User() {
         <div className="top__twitter">
           <TwitterTimelineEmbed
             sourceType="profile"
-            screenName="COVID19Tracking"
+            screenName="CDCgov"
             options={{ height: 420, width: 400 }}
           />
         </div>
         <TwitterTimelineEmbed
           sourceType="profile"
-          screenName="CDCgov"
+          screenName="COVID19Tracking"
           options={{ height: 420, width: 400 }}
         />
       </div>

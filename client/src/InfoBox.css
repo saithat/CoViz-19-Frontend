@@ -4,7 +4,7 @@
   background-color: #333042 !important;
 }
 .infoBox:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 2%;
 }
 .infoBox--selected {
   border-top: 10px solid #ffa500;

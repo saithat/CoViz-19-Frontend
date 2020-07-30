@@ -4,7 +4,7 @@
 body {
   background-color: #181621;
 }
-.app {
+.home {
   margin: 30px 15px;
   display: flex;
   justify-content: space-evenly;
@@ -39,6 +39,7 @@ body {
   border-radius: 10px;
   color: #fff !important;
 }
+
 .MuiMenuItem-root {
   margin-top: 0;
   color: #fff !important;
@@ -83,12 +84,19 @@ body {
 }
 
 @media (max-width: 1455px) {
-  .app {
+  .home {
     flex-direction: column;
   }
 
-  .MuiPaper-root {
-    width: 80%;
-    margin: 0 auto;
+  .table__left {
+    margin: auto 5%;
+  }
+  .table__right {
+    margin: 2% 5%;
+  }
+
+  .app__left {
+    margin: 0 5% 2% 5%;
+    order: -1;
   }
 }

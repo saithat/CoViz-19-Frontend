@@ -120,8 +120,10 @@ function App() {
 =======
     <Router>
       <div>
-        <Route path="/" exact component={Home} />
-        <Route path="/user" component={User} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/user" component={User} />
+        </Switch>
       </div>
     </Router>
 >>>>>>> 896e2b0e79a8b3fde5cf34a12d7cc6e420ca22a8

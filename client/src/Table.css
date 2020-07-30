@@ -21,6 +21,7 @@
     width: 100%;
   }
   .table tr {
+    margin-left: 12vw;
     width: 60vw;
   }
 }

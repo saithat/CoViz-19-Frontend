@@ -1,5 +1,5 @@
 import React from 'react';
-import numeral from 'numeral'; // to format numbers in a certain way
+import numeral from 'numeral';
 import { Circle, Popup } from 'react-leaflet';
 
 const casesTypeColors = {

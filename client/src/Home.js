@@ -89,8 +89,8 @@ function Home() {
   };
 
   return (
-    <div className="app">
-      <Card>
+    <div className="home">
+      <Card className="table__left">
         <CardContent>
           <h3 className="app__rightTableTitle">
             current confirmed cases • world
@@ -167,7 +167,7 @@ function Home() {
           zoom={mapZoom}
         />
       </div>
-      <Card>
+      <Card className="table__right">
         <CardContent>
           <h3 className="app__rightTableTitle">current confirmed cases • US</h3>
           <Table states={statesTableData} />

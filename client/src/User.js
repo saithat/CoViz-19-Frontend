@@ -5,23 +5,31 @@ import { Link } from 'react-router-dom';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 function User() {
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  const [country, setCountry] = useState('');
-  const [cases, setCases] = useState();
-  const [recovered, setRecovered] = useState();
-  const [deaths, setDeaths] = useState();
+  const [name, setName] = useState([]);
+  const [date, setDate] = useState([]);
+  const [country, setCountry] = useState([]);
+  const [cases, setCases] = useState([]);
+  const [recovered, setRecovered] = useState([]);
+  const [deaths, setDeaths] = useState([]);
 
   const submit = (event) => {
     event.preventDefault();
 
     const payload = {
       name: name,
-      date: date,
       country: country,
-      cases: cases,
-      recovered: recovered,
-      deaths: deaths,
+      cases: {
+        date: date,
+        cases: cases,
+      },
+      recovered: {
+        date: date,
+        recovered: recovered,
+      },
+      deaths: {
+        date: date,
+        deaths: deaths,
+      },
     };
 
     fetch({
@@ -31,8 +39,6 @@ function User() {
     })
       .then(() => {
         console.log('Data has been sent to the server');
-        this.resetUserInputs();
-        this.getBlogPost();
       })
       .catch(() => {
         console.log('Internal server error');

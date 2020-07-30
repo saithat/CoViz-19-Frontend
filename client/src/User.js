@@ -104,21 +104,6 @@ function User() {
           </form>
         </div>
       </div>
-
-      <div className="user__right">
-        <div className="top__twitter">
-          <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName="CDCgov"
-            options={{ height: 420, width: 400 }}
-          />
-        </div>
-        <TwitterTimelineEmbed
-          sourceType="profile"
-          screenName="COVID19Tracking"
-          options={{ height: 420, width: 400 }}
-        />
-      </div>
     </div>
   );
 }

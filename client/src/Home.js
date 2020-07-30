@@ -16,6 +16,8 @@ import LineGraph from './LineGraph';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
 
+import SideBar from './components/sideBar';
+
 function Home() {
   const [countryInfo, setCountryInfo] = useState({});
   const [countries, setCountries] = useState([]);
@@ -89,7 +91,9 @@ function Home() {
   };
 
   return (
+    <div>
     <div className="home">
+    <SideBar />
       <Card className="table__left">
         <CardContent>
           <h3 className="app__rightTableTitle">
@@ -181,6 +185,7 @@ function Home() {
           />
         </CardContent>
       </Card>
+    </div>
     </div>
   );
 }

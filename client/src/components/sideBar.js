@@ -5,22 +5,22 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// import ListItem from '@material-ui/core/ListItem';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemText from '@material-ui/core/ListItemText';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
 
-import './sideBar.css'
+import './sideBar.css';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const useStyles = makeStyles({
   list: {
-    width: 500,
+    width: 450,
   },
   fullList: {
     width: 'auto',
-  }
+  },
 });
 
 export default function TemporaryDrawer() {
@@ -30,7 +30,10 @@ export default function TemporaryDrawer() {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
       return;
     }
 
@@ -47,31 +50,37 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-      <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName="CDCgov"
-            theme="dark"
-            options={{ height: 420, width: 490 }}
-          />
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="CDCgov"
+          theme="dark"
+          options={{ height: 420, width: 450 }}
+        />
       </List>
       <Divider />
       <List>
-      <TwitterTimelineEmbed
+        <TwitterTimelineEmbed
           sourceType="profile"
           screenName="COVID19Tracking"
           theme="dark"
-          options={{ height: 420, width: 490 }}
-          />
+          options={{ height: 420, width: 450 }}
+        />
       </List>
     </div>
   );
 
   return (
     <div>
-          <Button className="side-bar" onClick={toggleDrawer('left', true)}>News</Button>
-          <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)}>
-            {list('left')}
-          </Drawer>
+      <Button className="side-bar" onClick={toggleDrawer('left', true)}>
+        news
+      </Button>
+      <Drawer
+        anchor="left"
+        open={state['left']}
+        onClose={toggleDrawer('left', false)}
+      >
+        {list('left')}
+      </Drawer>
     </div>
   );
 }

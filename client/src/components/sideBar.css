@@ -1,10 +1,16 @@
 .side-bar {
-    background-color: #333042 !important;
-    border-radius: 10px !important;
-    color: #fff !important;
-    text-decoration: none !important;
-    font-size: large !important;
-    margin-right: 25px !important;
-    border: 1px solid #333042 !important;
-    padding: 16px 25px !important;
+  background-color: #333042 !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  text-transform: capitalize !important;
+  margin-right: 25px !important;
+  padding: 14px 25px !important;
+}
+
+@media (max-width: 900px) {
+  .drawer {
+    width: 100px !important;
+  }
 }

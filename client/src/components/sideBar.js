@@ -11,7 +11,7 @@ import Divider from '@material-ui/core/Divider';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
 
-import './sideBar.css';
+import './SideBar.css';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const useStyles = makeStyles({

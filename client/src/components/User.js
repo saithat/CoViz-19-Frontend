@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './User.css';
 import { Link } from 'react-router-dom';
 
-import SideBar from './components/sideBar';
+import SideBar from './SideBar';
 import axios from 'axios';
 import { prettyPrintStat } from './util';
 

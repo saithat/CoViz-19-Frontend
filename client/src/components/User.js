@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './User.css';
 import { Link } from 'react-router-dom';
+import ReactLoading from 'react-loading';
 
 import SideBar from './SideBar';
 import axios from 'axios';
-import { prettyPrintStat } from './util';
 
 function User() {
   const [name, setName] = useState('');
-  const [country, setCountry] = useState('');
-  const [cases, setCases] = useState('');
-  const [recovered, setRecovered] = useState('');
-  const [deaths, setDeaths] = useState('');
+  const [location, setLocation] = useState('');
+  const [body, setBody] = useState('');
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getUserPosts();
@@ -23,7 +22,7 @@ function User() {
       .get('https://demo-covid-api.herokuapp.com/user')
       .then((response) => {
         const data = response.data;
-        setPosts(data);
+        setPosts(data.reverse());
         console.log('Data has been received!!');
       })
       .catch(() => {
@@ -33,13 +32,11 @@ function User() {
 
   const submit = (event) => {
     event.preventDefault();
+    setLoading(true);
+
     const today = new Date();
     const date =
-      today.getFullYear() +
-      '-' +
-      (today.getMonth() + 1) +
-      '-' +
-      today.getDate();
+      today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
     const time =
       today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
@@ -47,13 +44,9 @@ function User() {
       date: date,
       time: time,
       name: name,
-      country: country,
-      cases: Number(cases),
-      recovered: Number(recovered),
-      deaths: Number(deaths),
+      location: location,
+      body: body,
     };
-
-    console.log(payload);
 
     axios({
       url: 'https://demo-covid-api.herokuapp.com/user',
@@ -61,12 +54,10 @@ function User() {
       data: payload,
     })
       .then(() => {
-        alert(
-          'Hello ' +
-            name +
-            '! Your data has been saved... Thank you for your contribution!'
-        );
         resetForm();
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
         getUserPosts();
       })
       .catch((err) => {
@@ -82,16 +73,14 @@ function User() {
         <div className="left">
           <div className="name">
             <h3>
-              {post.country} | {post.date}
+              {post.location} | {post.date}
             </h3>
-            <p>User: {post.name}</p>
+            <h4>@{post.name}</h4>
           </div>
         </div>
 
-        <div className="right">
-          <p>New Cases: {prettyPrintStat(post.cases)}</p>
-          <p>New Recovered: {prettyPrintStat(post.recovered)}</p>
-          <p>New Deaths: {prettyPrintStat(post.deaths)}</p>
+        <div className="post">
+          <p>{post.body}</p>
         </div>
       </div>
     ));
@@ -99,10 +88,8 @@ function User() {
 
   const resetForm = () => {
     setName('');
-    setCountry('');
-    setCases('');
-    setRecovered('');
-    setDeaths('');
+    setLocation('');
+    setBody('');
   };
 
   return (
@@ -132,41 +119,28 @@ function User() {
             <input
               required="true"
               type="text"
-              name="country"
-              placeholder="Country Name"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
+              name="location"
+              placeholder="Location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             />
 
-            <input
+            <textarea
               required="true"
               type="text"
-              name="cases"
-              placeholder="New Cases"
-              value={cases}
-              onChange={(e) => setCases(e.target.value)}
-            />
-
-            <input
-              required="true"
-              type="text"
-              name="recovered"
-              placeholder="Newly Recovered"
-              value={recovered}
-              onChange={(e) => setRecovered(e.target.value)}
-            />
-
-            <input
-              required="true"
-              type="text"
-              name="deaths"
-              placeholder="New Deaths"
-              value={deaths}
-              onChange={(e) => setDeaths(e.target.value)}
-            />
+              name="body"
+              placeholder="How's Covid-19 situation in your area?"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+            ></textarea>
           </div>
 
-          <button className="btn">Submit</button>
+          <button className="btn">
+            {loading && (
+              <ReactLoading className="loading" type="bars" color="#fff" />
+            )}
+            {!loading && 'Submit'}
+          </button>
         </form>
       </div>
 

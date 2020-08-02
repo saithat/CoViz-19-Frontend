@@ -22,7 +22,6 @@
 
 @media (max-width: 1375px) {
   .side-bar {
-    margin-right: 10px !important;
     padding: 10px 20px !important;
   }
 }
@@ -34,7 +33,7 @@
 }
 
 @media (max-width: 675px) {
-  .side-bar {
+  .one {
     margin-right: 20px !important;
   }
 }

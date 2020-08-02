@@ -167,6 +167,6 @@ body {
     flex-direction: column;
   }
   .user-link {
-    margin: 15px auto;
+    margin-bottom: 15px;
   }
 }

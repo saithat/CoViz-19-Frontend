@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './User.css';
 import { Link } from 'react-router-dom';
-import ReactLoading from 'react-loading';
+import Loader from 'react-loader-spinner';
 
 import SideBar from './SideBar';
 import axios from 'axios';
@@ -24,9 +24,10 @@ function User() {
       .then((response) => {
         const data = response.data;
         setTimeout(() => {
+          setPosts(data.reverse());
           setLoading(false);
         }, 1000);
-        setPosts(data.reverse());
+
         console.log('Data has been received!!');
       })
       .catch(() => {
@@ -137,7 +138,7 @@ function User() {
 
           <button className="btn">
             {loading && (
-              <ReactLoading className="loading" type="bars" color="#fff" />
+              <Loader className="loading" type="ThreeDots" color="#fff" />
             )}
             {!loading && 'Submit'}
           </button>

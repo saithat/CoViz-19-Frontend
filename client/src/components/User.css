@@ -94,7 +94,7 @@
 .loading {
   display: flex;
   align-items: center;
-  height: 30px !important;
+  height: 20px !important;
   width: 50px !important;
 }
 
@@ -137,6 +137,12 @@
 @media (max-width: 625px) {
   .user__nav {
     flex-direction: column;
+  }
+  .user__nav > h1 {
+    margin-bottom: 15px;
+  }
+  .side-bar {
+    margin-bottom: 15px !important;
   }
   .list {
     width: 250px !important;

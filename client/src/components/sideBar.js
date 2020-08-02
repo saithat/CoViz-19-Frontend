@@ -51,7 +51,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <Button className="side-bar" onClick={toggleDrawer('left', true)}>
+      <Button className="side-bar one" onClick={toggleDrawer('left', true)}>
         news
       </Button>
       <Drawer

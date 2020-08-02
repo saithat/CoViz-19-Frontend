@@ -165,6 +165,8 @@ body {
 @media (max-width: 475px) {
   .right__nav {
     flex-direction: column;
-    gap: 15px;
+  }
+  .user-link {
+    margin: 15px auto;
   }
 }

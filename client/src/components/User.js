@@ -18,10 +18,14 @@ function User() {
   }, []);
 
   const getUserPosts = () => {
+    setLoading(true);
     axios
       .get('https://demo-covid-api.herokuapp.com/user')
       .then((response) => {
         const data = response.data;
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
         setPosts(data.reverse());
         console.log('Data has been received!!');
       })
@@ -32,7 +36,6 @@ function User() {
 
   const submit = (event) => {
     event.preventDefault();
-    setLoading(true);
 
     const today = new Date();
     const date =
@@ -55,9 +58,6 @@ function User() {
     })
       .then(() => {
         resetForm();
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
         getUserPosts();
       })
       .catch((err) => {
@@ -137,7 +137,12 @@ function User() {
 
           <button className="btn">
             {loading && (
-              <ReactLoading className="loading" type="bars" color="#fff" />
+              <ReactLoading
+                className="loading"
+                type="bars"
+                color="#fff"
+                delay="10"
+              />
             )}
             {!loading && 'Submit'}
           </button>

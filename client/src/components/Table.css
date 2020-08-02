@@ -16,7 +16,7 @@
   padding: 0.5rem;
 }
 
-@media (max-width: 1455px) {
+@media (max-width: 900px) {
   .table {
     width: 100%;
   }

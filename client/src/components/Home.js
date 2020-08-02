@@ -114,7 +114,7 @@ function Home() {
         </Card>
         <div className="app__left">
           <div className="app__header">
-            <h1>COVID-19 Client</h1>
+            <h1>CoViz-19</h1>
             <div className="right__nav">
               <SideBar />
               <Link className="user-link" to="/user">

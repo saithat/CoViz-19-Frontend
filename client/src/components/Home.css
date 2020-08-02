@@ -83,7 +83,7 @@ body {
   width: 220px !important;
 }
 
-@media (max-width: 1455px) {
+@media (max-width: 900px) {
   .home {
     flex-direction: column;
   }

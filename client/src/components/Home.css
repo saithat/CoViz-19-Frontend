@@ -40,6 +40,10 @@ body {
   color: #fff !important;
 }
 
+.app__dropdown-name {
+  font-size: large !important;
+}
+
 .MuiMenuItem-root {
   margin-top: 0;
   color: #fff !important;
@@ -50,7 +54,7 @@ body {
   background-color: #333042 !important;
 }
 .app__left {
-  flex: 0.8; /* this is going to take up 90% of the screen */
+  flex: 0.8;
 }
 .MuiCardContent-root {
   background-color: #333042;
@@ -83,7 +87,26 @@ body {
   width: 220px !important;
 }
 
-@media (max-width: 1455px) {
+@media (max-width: 1500px) {
+  .app__header > h1 {
+    font-size: 1.7rem;
+  }
+  .user-link,
+  .app__dropdown-name {
+    font-size: 1rem !important;
+    margin-right: 10px !important;
+  }
+}
+
+@media (max-width: 1375px) {
+  .user-link,
+  .MuiSelect-outlined {
+    font-size: 0.85rem !important;
+    padding: 13px 25px !important;
+  }
+}
+
+@media (max-width: 1335px) {
   .home {
     flex-direction: column;
   }
@@ -91,12 +114,59 @@ body {
   .table__left {
     margin: auto 5%;
   }
+
   .table__right {
-    margin: 2% 5%;
+    margin: 3% 5%;
   }
 
   .app__left {
-    margin: 0 5% 2% 5%;
+    margin: 0 5% 3% 5%;
     order: -1;
+  }
+  .app__header > h1 {
+    font-size: 2rem;
+  }
+  .user-link,
+  .MuiSelect-outlined {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 675px) {
+  .app__header {
+    flex-direction: column;
+  }
+  .app__header > h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .user-link {
+    margin-right: 20px !important;
+  }
+  .MuiSelect-outlined {
+    padding-right: 30px !important;
+  }
+  .app__stats {
+    flex-direction: column;
+    text-align: center;
+  }
+  .infoBox:not(:last-child) {
+    margin: 0 0 3% 0 !important;
+  }
+}
+
+@media (max-width: 525px) {
+  .user-link,
+  .MuiSelect-outlined {
+    font-size: 0.825rem !important;
+  }
+}
+
+@media (max-width: 475px) {
+  .right__nav {
+    flex-direction: column;
+  }
+  .user-link {
+    margin-bottom: 15px;
   }
 }

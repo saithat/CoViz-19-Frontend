@@ -3,7 +3,7 @@
   background-color: #333042;
   padding: 1rem;
   border-radius: 10px;
-  margin-top: 2%;
+  margin-top: 3%;
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
 .map .leaflet-container {
@@ -32,4 +32,22 @@
 }
 .info-container {
   width: 150px;
+}
+
+@media (max-width: 845px) {
+  .map {
+    height: 450px;
+  }
+}
+
+@media (max-width: 750px) {
+  .map {
+    height: 375px;
+  }
+}
+
+@media (max-width: 400px) {
+  .map {
+    height: 325px;
+  }
 }

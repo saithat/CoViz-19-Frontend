@@ -97,9 +97,9 @@ function User() {
       <div className="user__nav">
         <h1>User Dashboard</h1>
 
-        <div className="right__nav">
+        <div className="right__nav-two">
           <SideBar />
-          <Link className="user-link" to="/">
+          <Link className="user-link user-link-back" to="/">
             Back To Home
           </Link>
         </div>
@@ -137,12 +137,7 @@ function User() {
 
           <button className="btn">
             {loading && (
-              <ReactLoading
-                className="loading"
-                type="bars"
-                color="#fff"
-                delay="10"
-              />
+              <ReactLoading className="loading" type="bars" color="#fff" />
             )}
             {!loading && 'Submit'}
           </button>

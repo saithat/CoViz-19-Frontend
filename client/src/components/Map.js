@@ -8,7 +8,8 @@ function Map({ countries, casesType, center, zoom }) {
     <div className="map">
       <LeafletMap center={center} zoom={zoom}>
         <TileLayer
-          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png "
+          maxZoom="10"
           attribution=""
         />
         {showDataOnMap(countries, casesType)}

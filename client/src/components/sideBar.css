@@ -3,14 +3,38 @@
   border-radius: 10px !important;
   color: #fff !important;
   text-decoration: none !important;
-  font-size: 1rem !important;
+  font-size: large !important;
   text-transform: capitalize !important;
   margin-right: 25px !important;
-  padding: 14px 25px !important;
+  padding: 13px 25px !important;
 }
 
-@media (max-width: 900px) {
-  .drawer {
-    width: 100px !important;
+.list {
+  margin: 20px !important;
+  height: 420px !important;
+}
+
+@media (max-width: 1500px) {
+  .side-bar {
+    margin-right: 10px !important;
+  }
+}
+
+@media (max-width: 1375px) {
+  .side-bar {
+    margin-right: 10px !important;
+    padding: 10px 20px !important;
+  }
+}
+
+@media (max-width: 845px) {
+  .list {
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 675px) {
+  .side-bar {
+    margin-right: 20px !important;
   }
 }

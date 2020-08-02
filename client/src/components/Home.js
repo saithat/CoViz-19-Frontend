@@ -25,7 +25,10 @@ function Home() {
   const [states, setStates] = useState([]);
   const [worldTableData, setWorldTableData] = useState([]);
   const [statesTableData, setStatesTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapCenter, setMapCenter] = useState({
+    lat: 40.044438,
+    lng: -19.518099,
+  });
   const [mapZoom, setMapZoom] = useState(2);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState('cases');
@@ -84,13 +87,14 @@ function Home() {
         setCountry(countryCode);
         setCountryInfo(data);
         if (countryCode === 'worldwide') {
-          setMapCenter([34.80746, -40.4796]);
+          // setMapCenter([34.80746, -40.4796]);
+          setMapCenter([40.044438, -19.518099]);
           setMapZoom(2);
         } else {
           setMapCenter([data.lat, data.long]);
         }
       })
-      .then(setMapZoom(3));
+      .then(setMapZoom(4));
   };
 
   return (
@@ -122,6 +126,7 @@ function Home() {
               </Link>
               <FormControl className="app__dropdown">
                 <Select
+                  className="app__dropdown-name"
                   variant="outlined"
                   onChange={onCountryChange}
                   value={country}

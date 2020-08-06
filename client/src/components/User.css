@@ -10,7 +10,14 @@
 }
 
 .user-link-back {
-  margin-right: 0 !important;
+  text-decoration: none;
+  color: #fff;
+  font-size: large;
+  margin-left: 25px;
+  border: 1px solid #333042;
+  border-radius: 10px;
+  background-color: #333042;
+  padding: 16px 25px;
 }
 
 .user__nav {
@@ -103,6 +110,10 @@
   .side-bar {
     font-size: 0.925rem !important;
   }
+
+  .user-link-back {
+    padding: 13px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -142,9 +153,15 @@
     margin-bottom: 15px;
   }
   .side-bar {
-    margin-bottom: 15px !important;
+    margin-bottom: 0 !important;
   }
   .list {
     width: 250px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    width: 85%;
   }
 }

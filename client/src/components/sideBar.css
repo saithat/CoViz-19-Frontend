@@ -5,7 +5,6 @@
   text-decoration: none !important;
   font-size: large !important;
   text-transform: capitalize !important;
-  margin-right: 25px !important;
   padding: 13px 25px !important;
 }
 
@@ -16,12 +15,6 @@
 
 @media (max-width: 1500px) {
   .side-bar {
-    margin-right: 10px !important;
-  }
-}
-
-@media (max-width: 1375px) {
-  .side-bar {
     padding: 10px 20px !important;
   }
 }
@@ -29,11 +22,5 @@
 @media (max-width: 845px) {
   .list {
     width: 350px !important;
-  }
-}
-
-@media (max-width: 675px) {
-  .one {
-    margin-right: 20px !important;
   }
 }

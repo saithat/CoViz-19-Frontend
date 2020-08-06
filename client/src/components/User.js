@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './User.css';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
+import axios from 'axios';
 
 import SideBar from './SideBar';
-import axios from 'axios';
+import Loading from './Loading';
 
 function User() {
   const [name, setName] = useState('');
@@ -26,7 +27,7 @@ function User() {
         setTimeout(() => {
           setPosts(data.reverse());
           setLoading(false);
-        }, 1000);
+        }, 1850);
 
         console.log('Data has been received!!');
       })
@@ -100,7 +101,7 @@ function User() {
 
         <div className="right__nav-two">
           <SideBar />
-          <Link className="user-link user-link-back" to="/">
+          <Link className="user-link-back" to="/">
             Back To Home
           </Link>
         </div>
@@ -139,6 +140,7 @@ function User() {
           <button className="btn">
             {loading && (
               <Loader className="loading" type="ThreeDots" color="#fff" />
+              // <Loading />
             )}
             {!loading && 'Submit'}
           </button>

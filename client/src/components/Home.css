@@ -28,7 +28,7 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: large;
-  margin-right: 25px;
+  margin: auto 25px;
   border: 1px solid #333042;
   border-radius: 10px;
   background-color: #333042;
@@ -94,15 +94,21 @@ body {
   .user-link,
   .app__dropdown-name {
     font-size: 1rem !important;
-    margin-right: 10px !important;
+  }
+
+  .user-link {
+    margin: auto 10px !important;
   }
 }
 
 @media (max-width: 1375px) {
-  .user-link,
-  .MuiSelect-outlined {
+  .user-link {
     font-size: 0.85rem !important;
     padding: 13px 25px !important;
+  }
+  .MuiSelect-outlined {
+    font-size: 0.85rem !important;
+    padding: 13px 30px !important;
   }
 }
 
@@ -141,7 +147,7 @@ body {
     margin-bottom: 15px;
   }
   .user-link {
-    margin-right: 20px !important;
+    margin: auto 20px !important;
   }
   .MuiSelect-outlined {
     padding-right: 30px !important;
@@ -165,8 +171,9 @@ body {
 @media (max-width: 475px) {
   .right__nav {
     flex-direction: column;
+    align-items: center;
   }
   .user-link {
-    margin-bottom: 15px;
+    margin: 15px 0 15px 0 !important;
   }
 }

@@ -12,11 +12,11 @@ import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
 import { sortData, prettyPrintStat } from './util';
+import SideBar from './SideBar';
+
 import LineGraph from './LineGraph';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
-
-import SideBar from './SideBar';
 
 function Home() {
   const [countryInfo, setCountryInfo] = useState({});
@@ -87,7 +87,6 @@ function Home() {
         setCountry(countryCode);
         setCountryInfo(data);
         if (countryCode === 'worldwide') {
-          // setMapCenter([34.80746, -40.4796]);
           setMapCenter([40.044438, -19.518099]);
           setMapZoom(2);
         } else {

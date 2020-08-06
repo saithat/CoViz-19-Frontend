@@ -2,7 +2,7 @@
 
 ## LIVE
 
-https://coviz-19.vercel.app (Don't forget to post something to let us know the Covid-19 situation in your area!)
+https://coviz-19.vercel.app (Don't forget to post something to let us know about the Covid-19 situation in your area!)
 
 ## ABOUT
 

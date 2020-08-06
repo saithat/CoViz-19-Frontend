@@ -14,4 +14,4 @@ Sai Thatigotla (https://github.com/saithat), Gandhar Viragi (https://github.com/
 
 ## CODE
 
-Back-end Code - https://github.com/imrakilahmed/covid-api
+Back-end Code - https://github.com/imrakilahmed/CoViz-19-Backend
